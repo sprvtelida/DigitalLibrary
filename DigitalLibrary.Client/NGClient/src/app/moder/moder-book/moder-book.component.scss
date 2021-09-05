@@ -1,0 +1,102 @@
+.content {
+  font-family: 'Montserrat';
+}
+
+
+img {
+  width: clamp(50px, 100px, 300px);
+}
+
+.content-table {
+  width: 102%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  overflow: hidden;
+  thead tr {
+    font-size: 18px;
+    background-color: #124b62;
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+  }
+  tbody td {
+    font-size: 18px;
+    min-width: 100px;
+    border-left: 1px solid #ddd;
+  }
+  th, td {
+    padding: 12px 15px;
+  }
+  tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+  }
+  tbody tr:last-child {
+    border-bottom: 2px solid #263238;
+  };
+}
+
+
+
+
+.edit-btn {
+  cursor: pointer;
+  width: 1.5rem;
+}
+
+.delete-btn {
+  cursor: pointer;
+  height: 1.2rem;
+  width: 1.2rem;
+  transform: scale(1.2);
+  display: inline-block;
+  background-color: black;
+  background-repeat: no-repeat;
+  -webkit-mask-image: url("/../../../assets/mod/iwwa_delete.svg");
+  mask-image: url("/../../../assets/mod/iwwa_delete.svg");
+  transition: all 100ms ease;
+  &:hover {
+    transform: scale(1.5);
+    background-color: orangered;
+  }
+}
+
+.download {
+  cursor: pointer;
+  height: 1.3rem;
+  width: 1.3rem;
+  display: inline-block;
+  background-color: #263238;
+  -webkit-mask-image: url("/../../../assets/mod/ic_round-download.svg");
+  mask-image: url("/../../../assets/mod/ic_round-download.svg");
+}
+
+.disabled {
+  pointer-events: none;
+  background-color: grey;
+}
+
+.add {
+  transition: all 200ms ease;
+  a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    transition: all 200ms ease;
+    font-size: 30px;
+    &:hover {
+      font-size: 36px;
+      color: #124b62;
+    }
+  }
+}
+
+.pagination {
+  margin: 20px 40px;
+  button {
+    height: 30px;
+    width: 30px;
+  }
+}

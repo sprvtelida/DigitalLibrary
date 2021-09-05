@@ -1,0 +1,45 @@
+<div class="header">
+
+    <span class="logo">Digital Library</span>
+    <nav>
+      <ul class="nav__links">
+        <li><a routerLink="/home">{{'Home' | translate}}</a></li>
+        <li><a routerLink="/books">{{'Books' | translate}}</a></li>
+        <li><a routerLink="/about">{{'About' | translate}}</a></li>
+        <select class="language-select" (change)="changeLang($event.target.value)">
+          <option value="en" [selected]="lang == 'en'">English</option>
+          <option value="ru" [selected]="lang == 'ru'">Русский</option>
+          <option value="kk" [selected]="lang == 'kk'">Қазақша</option>
+        </select>
+        <li class="dropdown" *ngIf="isAuthorized">
+          <button class="dropdown__btn">
+            <img class="dropdown__img" [src]="imageToShow? imageToShow : 'https://cdn.iconscout.com/icon/free/png-256/avatar-375-456327.png'" alt="Avatar">
+          </button>
+          <ul class="dropdown__menu">
+            <div class="person">
+              <div class="image__wrapper">
+                <img [src]="imageToShow? imageToShow : 'https://cdn.iconscout.com/icon/free/png-256/avatar-375-456327.png'" alt="Avatar">
+              </div>
+              <div class="person__about">
+                <p>{{profile.lastName}} {{profile.firstName}}</p>
+                <p>{{profile.email}}</p>
+                <p>{{'HEADER.ROLE' | translate}}: {{'HEADER.' + (role ? role : "user") | translate}}</p>
+              </div>
+            </div>
+            <span></span>
+            <div class="menu">
+              <li><a routerLink="/profile" class="profile">{{'HEADER.PROFILE' | translate}}</a></li>
+              <li *ngIf="role == 'administrator'"><a class="adm">{{'HEADER.ADM_PANEL' | translate}}</a></li>
+              <li *ngIf="role == 'moderator' || role == 'administrator'"><a class="mod" [routerLink]="['mod']">{{'HEADER.MDM_PANEL' | translate}}</a></li>
+              <li><a class="accountings" [routerLink]="['moder-accounting']">{{'HEADER.ACCS' | translate}}</a></li>
+              <li><a class="sign-out" (click)="logout()">{{'HEADER.SIGN_OUT' | translate}}</a></li>
+            </div>
+          </ul>
+        </li>
+        <li *ngIf="!isAuthorized">
+          <a class="sign-in-btn" (click)="login()">{{'Sign In' | translate}}</a>
+        </li>
+      </ul>
+    </nav>
+
+</div>

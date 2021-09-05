@@ -1,0 +1,36 @@
+<div class="all-mother">
+  <h1 class="title-acc" *ngIf="isModeration == false">{{'MODER.ACCS' | translate}}</h1>
+  <table class="content-table">
+    <thead>
+    <tr>
+      <th>{{'MODER.IIN' | translate}}</th>
+      <th>{{'MODER.INV_NUMBER' | translate}}</th>
+      <th>{{'MODER.BOOK_TITLE' | translate}}</th>
+      <th>{{'MODER.REQUEST_DATE' | translate}}</th>
+      <th>{{'MODER.ISSUE_DATE' | translate}}</th>
+      <th>{{'MODER.RETURN_DATE' | translate}}</th>
+      <th>{{'MODER.DATE_RETURNED' | translate}}</th>
+      <th>{{'MODER.STATUS' | translate}}</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let accounting of accountings">
+      <td>{{accounting.profile?accounting.profile.iin:'-'}}</td>
+      <td>{{accounting.storage?accounting.storage.inventoryNumber:'-'}}</td>
+      <td>{{accounting.book?accounting.book.title:'-'}}</td>
+      <td>{{accounting.requestDate ? (accounting.requestDate | date) : '-'}}</td>
+      <td>{{accounting.issueDate ? (accounting.issueDate | date) : '-'}}</td>
+      <td>{{accounting.returnDate ? (accounting.returnDate | date) : '-'}}</td>
+      <td>{{accounting.dateReturned ? (accounting.dateReturned | date : 'short') : '-'}}</td>
+      <td>{{accounting.status ? (accounting.status | translate) : '-'}}</td>
+      <td class="btn" *ngIf="isModeration && accounting.status == 'Requested'"><button (click)="updateStatusOfAccounting(accounting.id, 1)">{{'MODER.ACCEPT' | translate}}</button></td>
+      <td class="btn" *ngIf="isModeration && accounting.status == 'Requested'"><button (click)="updateStatusOfAccounting(accounting.id, 3)">{{'MODER.DECLINE' | translate}}</button></td>
+      <td class="btn" *ngIf="isModeration && accounting.status == 'Accepted'"><button (click)="updateStatusOfAccounting(accounting.id, 2)">{{'MODER.ISSUE' | translate}}</button></td>
+      <td class="btn" *ngIf="isModeration && accounting.status == 'Issued'"><button (click)="updateStatusOfAccounting(accounting.id, 4)">{{'MODER.FINISH' | translate}}</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

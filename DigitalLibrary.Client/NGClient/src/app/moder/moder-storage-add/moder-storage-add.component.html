@@ -1,0 +1,54 @@
+<div class="selected-book" *ngIf="selectedBook!=null">
+  <div class="book">
+    <div class="title">{{this.selectedBook.title}}</div>
+    <div class="author">{{this.selectedBook.author.firstName + ' ' + this.selectedBook.author.lastName}}</div>
+    <div class="description">{{this.selectedBook.description}}</div>
+  </div>
+  <div class="quantity">
+    <p>{{'MODER.QUANTITY' | translate}}: {{quantity}}</p>
+    <button (click)="increment()">+</button>
+    <button (click)="decrement()" [disabled]="quantity<=0">-</button>
+  </div>
+  <div class="submit">
+    <button (click)="addItems()">{{'MODER.ADD_BOOKS' | translate}}</button>
+  </div>
+</div>
+
+<div class="form-control">
+  <input [(ngModel)]="searchTerm" type="text">
+  <button (click)="searchBooks()">{{'SEARCH' | translate}}</button>
+</div>
+
+<div class="book-list" *ngIf="isSearching">
+  <h2>{{'MODER.CHOOSE_BOOK' | translate}}</h2>
+  <table class="content-table">
+    <thead>
+    <tr>
+      <th>{{'MODER.IMG' | translate}}</th>
+      <th>{{'MODER.TITLE' | translate}}</th>
+      <th>{{'MODER.AUTHOR' | translate}}</th>
+      <th>{{'MODER.GENRE' | translate}}</th>
+      <th>{{'MODER.SUBJECT' | translate}}</th>
+      <th>{{'MODER.PAGES' | translate}}</th>
+      <th>{{'MODER.YEAR' | translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books" (click)="onSelect(book)">
+      <td><a (click)="onSelect(book)"><img [src]="'https://localhost:5001/images/'+(book.image?book.image+'.jpeg':'andjey.jpg')" alt="ph"></a></td>
+      <td><a (click)="onSelect(book)">{{book.title?book.title:'-'}}</a></td>
+      <td><a (click)="onSelect(book)">{{book.author?(book.author.lastName + " " + book.author.firstName):'-'}}</a></td>
+      <td><a (click)="onSelect(book)">{{book.genre?book.genre.title:'-'}}</a></td>
+      <td><a (click)="onSelect(book)">{{book.subject?book.subject.title:'-'}}</a></td>
+      <td><a (click)="onSelect(book)">{{book.pages?book.pages:'-'}}</a></td>
+      <td><a (click)="onSelect(book)">{{book.year?book.year:'-'}}</a></td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="pagination">
+    <button [disabled]="pageNumber <= 1" (click)="changePage(pageNumber - 1)"> < </button>
+    <button> {{pageNumber}} </button>
+    <button [disabled]="pageNumber >= totalPages" (click)="changePage(pageNumber + 1)"> > </button>
+  </div>
+</div>
+

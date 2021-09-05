@@ -1,0 +1,133 @@
+.content {
+  width: 90%;
+  margin: 0 auto 70px;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) 5fr;
+  grid-template-rows: 1fr auto;
+  grid-gap: 2rem;
+}
+
+.book-image {
+  //background: #44c767;
+  display: flex;
+  flex-direction: column;
+  img {
+    display: block;
+  }
+  a {
+    display: inline-block;
+  }
+}
+
+.book-description {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  justify-content: space-around;
+  .title {
+    line-height: 3rem;
+    margin-bottom: 30px;
+  }
+  .attributes {
+    display: flex;
+    margin-bottom: 20px;
+    div {
+      margin-right: 10px;
+      background: #999;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 18px;
+    }
+  }
+  .files {
+    margin-bottom: 40px;
+    display: flex;
+    a {
+      margin-right: 20px;
+      background: #124b62;
+      padding: 5px 20px;
+      color: white;
+      &:hover {
+        color: yellow;
+        cursor: pointer;
+      }
+      &:hover:active {
+        transform: scale(0.98);
+        background: #0e3848;
+      }
+    }
+  }
+}
+
+.book-meta {
+}
+
+.button {
+  padding: 15px;
+  background: #124b62;
+  color: white;
+  border: 1px solid gray;
+  cursor: pointer;
+
+  &:hover {
+    color: yellow;
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.book-meta {
+  h1 {
+    margin-bottom: 15px;
+  }
+  .meta {
+    font-size: 18px;
+    line-height: 1.5rem;
+    .item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "key value";
+      .key {
+        grid-area: key;
+      }
+      .value {
+        grid-area: value;
+      }
+    }
+  }
+}
+
+.accounting_form {
+  border: 1px dashed black;
+  padding: 10px;
+  margin-bottom: 10px;
+  input[type=submit] {
+    background: #124b62;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    &:hover {
+      color: yellow;
+    }
+    &:disabled {
+      background: #333;
+      &:hover {
+        color: white;
+        cursor: no-drop;
+      }
+    }
+  }
+  input[type=date] {
+    font-size: 24px;
+  }
+  form {
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+}

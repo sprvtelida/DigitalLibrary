@@ -1,0 +1,33 @@
+<div *ngIf="layout == 0" class="layout-0">
+  <img class="image" [src]="'https://localhost:5001/images/'+(book.image?book.image+'.jpeg':'andjey.jpg')" alt="ph">
+  <div class="over">
+    <div class="title">{{book.title ? book.title : ''}}</div>
+    <div>{{'BOOK.BY' | translate: {name: (book.author ? book.author.firstName + ' ' + book.author.lastName:'')} }}</div>
+    <div>{{'BOOK.PUBLISHED_IN' | translate: {year: book.year ? book.year : ''} }}</div>
+  </div>
+  <span *ngIf="book.isInStorage" class="icon"></span>
+</div>
+
+<div *ngIf="layout == 1" class="layout-1">
+  <img class="image" [src]="'https://localhost:5001/images/'+(book.image?book.image+'.jpeg':'andjey.jpg')" alt="ph">
+  <span *ngIf="book.isInStorage" class="icon"></span>
+  <div class="info">
+    <div class="info__meta">
+      <div class="title">
+        <p>{{book.title?book.title:''}}</p>
+        <p>{{'BOOK.BY' | translate: {name: (book.author ? book.author.firstName + ' ' + book.author.lastName:'')} }}</p>
+      </div>
+      <div class="metadata">
+        <p>{{book.publisher? ('PUBLISHER' | translate) + ': ' + book.publisher.name:''}}</p>
+        <p>{{'BOOK.PUBLISHED_IN' | translate: {year: book.year ? book.year : ''} }}</p>
+        <p>{{book.genre? ('GENRE' | translate) + ': ' + (book.genre.title | translate):'' }}</p>
+        <p>{{book.subject? ('SUBJECT' | translate) + ': '+ (book.subject.title | translate):''}}</p>
+      </div>
+    </div>
+    <div class="info__description">
+        <div class="description">
+          {{book.description?book.description:''}}
+        </div>
+    </div>
+  </div>
+</div>

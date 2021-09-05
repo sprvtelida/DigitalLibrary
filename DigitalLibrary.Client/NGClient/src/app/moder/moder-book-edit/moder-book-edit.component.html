@@ -1,0 +1,142 @@
+<div class="container">
+  <form [formGroup]="form">
+
+<!--  Title  -->
+    <div class="form-control">
+      <h2>{{'MODER.TITLE' | translate}}</h2>
+      <input formControlName="title" id="title" type="text">
+    </div>
+
+<!--  Description  -->
+    <div class="form-control">
+      <h2>{{'MODER.DESCRIPTION' | translate}}</h2>
+      <textarea formControlName="description" id="description" type="text"></textarea>
+    </div>
+
+<!--  Pages  -->
+    <div class="form-control">
+      <h2>{{'MODER.PAGES' | translate}}</h2>
+      <input formControlName="pages" id="pages" type="number">
+    </div>
+
+<!--  ISBN  -->
+    <div class="form-control">
+      <h2>ISBN</h2>
+      <input formControlName="isbn" id="isbn" type="text">
+    </div>
+
+<!--  Year  -->
+    <div class="form-control">
+      <h2>{{'MODER.YEAR' | translate}}</h2>
+      <input formControlName="year" id="year" type="number">
+    </div>
+
+<!--  Language  -->
+    <div class="form-control">
+      <h2>{{'MODER.LANG' | translate}}</h2>
+      <select formControlName="language" id="language">
+        <option value="1">{{'LANGUAGE.KAZ' | translate}}</option>
+        <option value="2">{{'LANGUAGE.RUS' | translate}}</option>
+        <option value="3">{{'LANGUAGE.ENG' | translate}}</option>
+      </select>
+    </div>
+
+<!--  Genre select box  -->
+    <div class="form-control">
+      <h2>{{'MODER.GENRE' | translate}}</h2>
+
+      <div class="select-box">
+
+        <div [class]="classToggle.genre?'options-container active':'options-container'">
+          <div class="option" *ngFor="let genre of collection.genres; let i = index">
+            <input (change)="Selected($event)" type="radio" class="radio" [id]="'genre.'+i" name="genre">
+            <label [for]="'genre.'+i">{{genre?.title | translate}}</label>
+          </div>
+        </div>
+
+        <div class="selected" (click)="classToggle.genre = !classToggle.genre">
+          {{ selected.genre.text | translate}}
+        </div>
+
+      </div>
+    </div>
+
+<!--  Subject select box  -->
+    <div class="form-control">
+      <h2>{{'MODER.SUBJECT' | translate}}</h2>
+
+      <div class="select-box">
+
+        <div [class]="classToggle.subject?'options-container active':'options-container'">
+          <div class="option" *ngFor="let subject of collection.subjects; let i = index">
+            <input (change)="Selected($event)" type="radio" class="radio" [id]="'subject.'+i" name="subject">
+            <label [for]="'subject.'+i">{{subject?.title | translate}}</label>
+          </div>
+        </div>
+
+        <div class="selected" (click)="classToggle.subject = !classToggle.subject">
+          {{ selected.subject.text | translate}}
+        </div>
+
+      </div>
+    </div>
+
+<!--  Author select box  -->
+    <div class="form-control">
+      <h2>{{'MODER.AUTHOR' | translate}}</h2>
+
+      <div class="select-box">
+
+        <div [class]="classToggle.author?'options-container active':'options-container'">
+          <div class="option" *ngFor="let author of collection.authors; let i = index">
+            <input (change)="Selected($event)" type="radio" class="radio" [id]="'author.'+i" name="author">
+            <label [for]="'author.'+i">{{author?(author.firstName + " " + author.lastName):''}}</label>
+          </div>
+        </div>
+
+        <div class="selected" (click)="classToggle.author = !classToggle.author">
+          {{ selected.author.text | translate}}
+        </div>
+
+      </div>
+    </div>
+
+<!--  Publisher select box  -->
+    <div class="form-control">
+      <h2>{{'MODER.PUBLISHER' | translate}}</h2>
+
+      <div class="select-box">
+
+        <div [class]="classToggle.publisher?'options-container active':'options-container'">
+          <div class="option" *ngFor="let publisher of collection.publishers; let i = index">
+            <input (change)="Selected($event)" type="radio" class="radio" [id]="'publisher.'+i" name="publisher">
+            <label [for]="'publisher.'+i">{{publisher?publisher.name:''}}</label>
+          </div>
+        </div>
+
+        <div class="selected" (click)="classToggle.publisher = !classToggle.publisher">
+          {{ selected.publisher.text | translate}}
+        </div>
+
+      </div>
+    </div>
+
+    <div class="form-control">
+      <h2>{{'MODER.IMG' | translate}}</h2>
+      <input (change)="onImageSelected($event)" type="file" >
+    </div>
+
+    <div class="form-control">
+      <h2>{{'MODER.FILES' | translate}}</h2>
+      <input (change)="onFilesSelected($event)" type="file" multiple="multiple">
+    </div>
+
+<!---->
+    <button (click)="onSubmit()">{{'MODER.SUBMIT' | translate}}</button>
+  </form>
+
+<!--  Form for Files-->
+
+
+
+</div>

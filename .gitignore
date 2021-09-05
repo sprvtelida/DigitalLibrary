@@ -1,0 +1,5 @@
+.idea
+.vs
+/DigitalLibrary.API/appsettings.json
+/DigitalLibrary.API/appsettings.Development.json
+/DigitalLibrary.Client/NGClient/node_modules

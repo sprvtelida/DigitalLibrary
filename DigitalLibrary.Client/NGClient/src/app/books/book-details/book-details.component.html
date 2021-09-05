@@ -1,0 +1,66 @@
+<div class="content">
+  <div class="book-image">
+    <img [src]="'https://localhost:5001/images/'+(book.image?book.image+'.jpeg':'andjey.jpg')" alt="ph">
+    <a *ngIf="book.isInStorage" class="button" (click)="isAccountingMaking=!isAccountingMaking">
+      {{'BOOK.MAKE_AN_ACC' | translate}}
+    </a>
+  </div>
+  <div class="book-description">
+    <div class="title">
+      <h1>{{book.title ? book.title : 'Undefined'}}</h1>
+      <p>{{'BOOK.BY' | translate: {name: (book.author ? (book.author.firstName +" "+ book.author.lastName) : 'Undefined')} }}</p>
+    </div>
+    <div class="attributes">
+      <div *ngIf="book.genre!=null">{{book.genre.title | translate}}</div>
+      <div *ngIf="book.subject!=null">{{book.subject.title | translate}}</div>
+    </div>
+    <div class="files">
+      <a *ngIf="book.epub" (click)="downloadFile(book.epub+'.epub', book.title)">Epub</a>
+      <a *ngIf="book.pdf" (click)="downloadFile(book.pdf+'.pdf', book.title)">PDF</a>
+      <a *ngIf="book.fb2" (click)="downloadFile(book.fb2+'.fb2', book.title)">Fb2</a>
+    </div>
+    <div class="accounting_form" *ngIf="!isAccountingMaking">
+      <form>
+        <label for="returnDate">{{'MODER.RETURN_DATE' | translate}}: </label>
+        <input id="returnDate" type="date" [ngModel]="returnDate | date:'yyyy-MM-dd'" (ngModelChange)="returnDate = $event" name="returnDate">
+        <p *ngIf="!formInvalid">{{'BOOK.YOU_NEED_TO_RETURN' | translate: {daysToReturn: daysToReturn} }}</p>
+        <span style="color: orangered">{{validationMessage}}</span>
+        <span style="color: green">{{successMessage}}</span>
+        <input [disabled]="formInvalid" type="submit" [value]="'BOOK.MAKE_AN_ACC' | translate" (click)="addAccounting()">
+      </form>
+    </div>
+    <div *ngIf="book.description">
+      <h1>{{'BOOK.SUMMARY' | translate}}</h1>
+      {{book.description}}
+    </div>
+  </div>
+  <div class="book-meta">
+    <h1>{{'BOOK.DETAILS' | translate}}</h1>
+    <div class="meta">
+      <div class="item" *ngIf="book.year">
+        <span class="key">{{'BOOK.PUB_DATE' | translate}}</span>
+        <span class="value">{{book.year}}</span>
+      </div>
+      <div class="item" *ngIf="book.publisher">
+        <span class="key">{{'PUBLISHER' | translate}}</span>
+        <span class="value">{{book.publisher.name}}</span>
+      </div>
+      <div class="item" *ngIf="book.pages">
+        <span class="key">{{'BOOK.PAGE_COUNT' | translate}}</span>
+        <span class="value">{{'BOOK.PAGES' | translate: {count: book.pages} }}</span>
+      </div>
+      <div class="item" *ngIf="book.isbn">
+        <span class="key">ISBN</span>
+        <span class="value">{{book.isbn}}</span>
+      </div>
+      <div class="item" *ngIf="book.language">
+        <span class="key">{{'BOOK.LANGUAGE' | translate}}</span>
+        <span class="value">{{book.language | translate}}</span>
+      </div>
+      <div class="item" *ngIf="book.author.country">
+        <span class="key">{{'BOOK.COUNTRY' | translate}}</span>
+        <span class="value">{{book.author.country}}</span>
+      </div>
+    </div>
+  </div>
+</div>

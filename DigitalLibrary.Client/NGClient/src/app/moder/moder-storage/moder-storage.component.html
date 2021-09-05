@@ -1,0 +1,35 @@
+<div class="content">
+  <table class="content-table">
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>{{'MODER.ARV_DATE' | translate}}</th>
+        <th>{{'MODER.TITLE' | translate}}</th>
+        <th>{{'MODER.AUTHOR' | translate}}</th>
+        <th>{{'MODER.PUBLISH_YEAR' | translate}}</th>
+        <th>{{'MODER.ACC_BY' | translate}}</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="add">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a [routerLink]="['..', 'moder-storage-add']">+</a></td>
+      </tr>
+      <tr *ngFor="let storedItem of storedItems">
+        <td>{{storedItem.inventoryNumber?storedItem.inventoryNumber:'-'}}</td>
+        <td>{{storedItem.arrivalDate?(storedItem.arrivalDate|date:'long':'':'en-US'):'-'}}</td>
+        <td>{{storedItem.book?storedItem.book.title:'-'}}</td>
+        <td>{{storedItem.book?.author?(storedItem.book.author.firstName +' '+ storedItem.book.author.lastName):'-'}}</td>
+        <td>{{storedItem.book?.year?storedItem.book.year:'-'}}</td>
+        <td>{{storedItem.accounting?storedItem.accounting.profile.iin:'-'}}</td>
+        <td><span><a class="delete-btn" (click)="onDelete(storedItem.id)"></a></span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

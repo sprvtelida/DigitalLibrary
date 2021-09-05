@@ -1,0 +1,106 @@
+<div class="wrapper">
+  <div class="controls">
+    <div class="controls__container">
+      <div class="search">
+        <input [(ngModel)]="searchText" class="search__input" type="text" [placeholder]="'BOOK.SEARCH_PH' | translate">
+        <div class="choose-field">
+          <a (click)="changeSearchField('Title')">{{'BOOK.TITLE_FIELD' | translate}}</a>
+          <hr>
+          <a (click)="changeSearchField('Author')">{{'BOOK.AUTHOR_FIELD' | translate}}</a>
+          <hr>
+          <a (click)="changeSearchField('ISBN')">{{'BOOK.ISBN_FIELD' | translate}}</a>
+        </div>
+        <a class="search__btn" (click)="search()">{{'SEARCH' | translate}}</a>
+      </div>
+      <div class="controls__properties">
+        <div class="controls__select">
+          <label class="select__label" for="sortBy">{{'BOOK.SORT_BY' | translate}}</label>
+          <select [(ngModel)]="sortBy" (click)="sortBySelected()" class="select__input" id="sortBy">
+            <option value="Title">{{'BOOK.TITLE' | translate}}</option>
+            <option value="Pages desc">{{'BOOK.PAGES_DESC' | translate}}</option>
+            <option value="Pages asc">{{'BOOK.PAGES_ASC' | translate}}</option>
+          </select>
+        </div>
+        <div class="controls__select">
+          <label class="select__label" for="items_per_page">{{'BOOK.IPS' | translate}}</label>
+          <select [(ngModel)]="itemsPerPage" (click)="itemsPerPageSelected()" class="select__input" id="items_per_page">
+            <option value=4>4</option>
+            <option value=12>12</option>
+            <option value=18>18</option>
+            <option value=24>24</option>
+          </select>
+        </div>
+        <div class="controls__layout">
+          <label>{{'BOOK.LAYOUT' | translate}}</label>
+          <button [class]="'btn1 ' + (this.layout == 0 ? 'selected':'')" (click)="changeLayout(0)"></button>
+          <button [class]="'btn2 ' + (this.layout == 1 ? 'selected':'')" (click)="changeLayout(1)"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="filter">
+    <form [formGroup]="form">
+      <p></p>
+      <div class="filter__dropdown">
+        <a (click)="genreToggle=!genreToggle">
+          <span class="title">{{'GENRES' | translate}}</span>
+          <span class="icon">{{genreToggle?'-':'+'}}</span>
+        </a>
+        <div *ngFor="let control of genresArray.value.controls; let i = index;" [class]="'check_wrapper ' + (genreToggle?'selected':'')">
+          <label class="check option">
+            <input [formControl]="control" class="check__input" type="checkbox">
+            {{genres[i].title | translate}}
+          </label>
+        </div>
+      </div>
+      <hr>
+      <div class="filter__dropdown">
+        <a (click)="subjectToggle=!subjectToggle">
+          <span class="title">{{'SUBJECTS' | translate}}</span>
+          <span class="icon">{{subjectToggle?'-':'+'}}</span>
+        </a>
+        <div *ngFor="let control of subjectsArray.value.controls; let i = index;" [class]="'check_wrapper ' + (subjectToggle?'selected':'')">
+          <label class="check option">
+            <input [formControl]="control" class="check__input" type="checkbox">
+            {{subjects[i].title | translate}}
+          </label>
+        </div>
+      </div>
+      <hr>
+    </form>
+    <div class="years">
+      <label>{{'YEARS' | translate}}: </label>
+      <div>
+        <input type="number" [(ngModel)]="minYear">
+        -
+        <input type="number" [(ngModel)]="maxYear">
+      </div>
+    </div>
+    <hr>
+    <div class="years">
+      <label>{{'PAGES' | translate}}: </label>
+      <div>
+        <input type="number" [(ngModel)]="minPage">
+        -
+        <input type="number" [(ngModel)]="maxPage">
+      </div>
+    </div>
+    <hr>
+    <div class="years" *ngIf="libraryId != null">
+      <label>
+        <input type="checkbox" [(ngModel)]="onlyInStorage">
+        {{'BOOK.ONLY_ON_STORAGE' | translate}}
+      </label>
+    </div>
+  </div>
+  <div [class]="'book_component ' + (layout==0?'layout-0':'layout-1')">
+    <app-book-item style="cursor:pointer" (click)="navigate(bookItem.id)" [layout]="layout" [book]="bookItem" *ngFor="let bookItem of books"></app-book-item>
+    <div class="paginator">
+      <button (click)="changePage(1)"><<</button>
+      <button [disabled]="currentPage <= 1" (click)="changePage(currentPage-1)"><</button>
+      <p>{{currentPage}}</p>
+      <button [disabled]="currentPage >= totalPages" (click)="changePage(currentPage+1)">></button>
+      <button (click)="changePage(totalPages)">>></button>
+    </div>
+  </div>
+</div>

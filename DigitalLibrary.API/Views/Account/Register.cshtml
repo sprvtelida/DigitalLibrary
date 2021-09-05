@@ -1,0 +1,48 @@
+﻿@using Microsoft.EntityFrameworkCore
+@model RegistrationViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Register";
+}
+
+<form asp-route="Register">
+    <input type="hidden" asp-for="ReturnUrl">
+
+    <div class="field">
+        <input class="input" type="text" asp-for="Email" placeholder=" ">
+        <label class="label">@Localizer["Email"]</label>
+    </div>
+    <span asp-validation-for="Email"></span>
+
+    <div class="field">
+        <input class="input" type="text" asp-for="Username" placeholder=" ">
+        <label class="label">@Localizer["Username"]</label>
+    </div>
+    <span asp-validation-for="Username"></span>
+
+
+    <div class="field">
+        <input class="input" type="text" asp-for="Password" placeholder=" ">
+        <label class="label">@Localizer["Password"]</label>
+    </div>
+
+    <div class="field">
+        <input class="input" type="text" asp-for="ConfirmPassword" placeholder=" ">
+        <label class="label">@Localizer["Confirm Password"]</label>
+    </div>
+
+    <span asp-validation-for="Password"></span>
+    <span asp-validation-for="ConfirmPassword"></span>
+
+    <span>@ViewBag.Error</span>
+    <span>@Html.ValidationMessage("default")</span>
+
+    <input class="button" type="submit" value="@Localizer["Sign Up"]">
+
+    <a class="link" href="@Url.ActionLink("Login", "Account", new {returnUrl = @ViewBag.ReturnUrl})">
+        @Localizer["Already have an account? Sign In"]
+    </a>
+</form>
+

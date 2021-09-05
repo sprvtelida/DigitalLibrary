@@ -1,0 +1,99 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="DuplicateEmail" xml:space="preserve">
+        <value>Эл. почта '{0}' уже занят.</value>
+    </data>
+    <data name="DefaultError" xml:space="preserve">
+        <value>Произошла неизвестная ошибка.</value>
+    </data>
+    <data name="DuplicateUserName" xml:space="preserve">
+        <value>Имя пользователя '{0}' уже занят.</value>
+    </data>
+    <data name="InvalidEmail" xml:space="preserve">
+        <value>Электронная почта '{0}' недействительна.</value>
+    </data>
+    <data name="InvalidToken" xml:space="preserve">
+        <value>Неверный токен.</value>
+    </data>
+    <data name="InvalidUserName" xml:space="preserve">
+        <value>Имя пользователя '{0}' недействителен, может содержать только буквы или цифры.</value>
+    </data>
+    <data name="LoginAlreadyAssociated" xml:space="preserve">
+        <value>Пользователь с таким логином уже существует.</value>
+    </data>
+    <data name="PasswordMismatch" xml:space="preserve">
+        <value>
+Неверный пароль.</value>
+    </data>
+    <data name="PasswordRequiresDigit" xml:space="preserve">
+        <value>Пароль должен состоять как минимум из одной цифры ('0'-'9').</value>
+    </data>
+    <data name="PasswordRequiresLower" xml:space="preserve">
+        <value>В пароле должна быть хотя бы одна строчная буква ('a'-'z').</value>
+    </data>
+    <data name="PasswordRequiresNonAlphanumeric" xml:space="preserve">
+        <value>Пароли должен содержать хотя бы один не буквенно-цифровой символ.</value>
+    </data>
+    <data name="PasswordRequiresUpper" xml:space="preserve">
+        <value>Пароль должен содержать хотя бы одну заглавную букву ('A'-'Z').</value>
+    </data>
+    <data name="PasswordTooShort" xml:space="preserve">
+        <value>Пароль должен содержать не менее '{0}' символов.</value>
+    </data>
+    <data name="UserAlreadyHasPassword" xml:space="preserve">
+        <value>У пользователя уже установлен пароль.</value>
+    </data>
+    <data name="UserLockoutNotEnabled" xml:space="preserve">
+        <value>Для этого пользователя отключена блокировка.</value>
+    </data>
+    <data name="Failed" xml:space="preserve">
+        <value>Данные для входа не верны.</value>
+    </data>
+    <data name="LockedOut" xml:space="preserve">
+        <value>Пользователь заблокирован.</value>
+    </data>
+    <data name="NotAllowed" xml:space="preserve">
+        <value>Аккаунт не подтвержден.</value>
+    </data>
+    <data name="ConfirmationEmailSent" xml:space="preserve">
+        <value>Сообщение со ссылкой для подтверждения аккаунта была отправлена на почту.</value>
+    </data>
+    <data name="Required" xml:space="preserve">
+        <value>Поле необходимо заполнить.</value>
+    </data>
+    <data name="RestoreLink" xml:space="preserve">
+        <value>Перейдите по ссылке для восстановления пароля: {0}, если вы не запрашивали восстановление пароля, проигнорируйте это сообщение.</value>
+    </data>
+    <data name="Password Restore" xml:space="preserve">
+        <value>Ссылка для сброса пароля</value>
+    </data>
+    <data name="PasswordResetEmailSent" xml:space="preserve">
+        <value>На вашу электронную почту было отправлено сообщение со ссылкой для сброса пароля.</value>
+    </data>
+    <data name="PasswordChanged" xml:space="preserve">
+        <value>Пароль был успешно изменен.</value>
+    </data>
+    <data name="EmailConfirmed" xml:space="preserve">
+        <value>Адрес электронной почты успешно подтвержден.</value>
+    </data>
+    <data name="Email is invalid or not found." xml:space="preserve">
+        <value>Электронная почта недействительна или не найдена.</value>
+    </data>
+    <data name="ConfirmEmailLink" xml:space="preserve">
+        <value>Перейдите по ссылке чтобы подтвердить адрес электронной почты: {0}.</value>
+    </data>
+    <data name="Email confirmation" xml:space="preserve">
+        <value>Подтверждение электонной почты</value>
+    </data>
+</root>

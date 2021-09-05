@@ -1,0 +1,19 @@
+div {
+  text-align: center;
+  background: #263238;
+  height: 200px;
+  color: white;
+  .content {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .rights {
+      font-size: 24px;
+      text-align: center;
+      line-height: 8em;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>{{'PROFILE.TITLE' | translate}}</h1>
+    <form [formGroup]="profileForm">
+
+      <div class="profile-pic-div">
+        <img id="photo"
+             [src]="imageToShow? imageToShow : 'https://cdn.iconscout.com/icon/free/png-256/avatar-375-456327.png'"
+             alt="pic">
+        <input (change)="onFileSelected($event)" type="file" id="file" name="image"
+               [attr.disabled]="!onChange?'not':null">
+        <label *ngIf="onChange" for="file" id="upload-btn">{{'PROFILE.CHOOSE_PHOTO' | translate}}</label>
+      </div>
+
+      <div class="input__wrap">
+        <div [class]="'field ' + returnInvalidIfInvalid('firstName')">
+          <div class="">{{'PROFILE.FNAME' | translate}}</div>
+          <input type="text" formControlName="firstName" name="firstName" [attr.disabled]="!onChange?'not':null">
+        </div>
+
+        <div [class]="'field ' + returnInvalidIfInvalid('lastName')">
+          <label>{{'PROFILE.LNAME' | translate}}</label>
+          <input type="text" formControlName="lastName" name="lastName" [attr.disabled]="!onChange?'not':null">
+        </div>
+
+        <div [class]="'field'">
+          <label>{{'PROFILE.USERNAME' | translate}}</label>
+          <input type="text" formControlName="userName" name="username" disabled>
+        </div>
+
+        <div [class]="'field'">
+          <label>{{'PROFILE.EMAIL' | translate}}</label>
+          <input type="text" formControlName="email" name="email" disabled>
+        </div>
+
+        <div [class]="'select'">
+          <label>{{'PROFILE.CITY' | translate}}</label>
+          <select formControlName="city" name="city" id="city" [attr.disabled]="!onChange?'not':null">
+            <option value=1 [selected]="calculateSelection(1)">Almaty</option>
+            <option value=2 [selected]="calculateSelection(2)">Karaganda</option>
+            <option value=3 [selected]="calculateSelection(3)">Astana</option>
+            <option value=4 [selected]="calculateSelection(4)">Moscow</option>
+          </select>
+        </div>
+
+        <div [class]="'select'">
+          <label>{{'PROFILE.LIB' | translate}}</label>
+          <select formControlName="registeredLibraryId" name="library" id="library"
+                  [attr.disabled]="!onChange?'not':null">
+            <option [selected]="calculateSelectionForLibrary(library.id)" *ngFor="let library of libraries" [value]="library.id">{{library.name}}</option>
+          </select>
+        </div>
+
+        <div [class]="'field ' + returnInvalidIfInvalid('phoneNumber')">
+          <label>{{'PROFILE.PHONE' | translate}}</label>
+          <input type="text" formControlName="phoneNumber" name="phoneNumber" [attr.disabled]="!onChange?'not':null">
+        </div>
+
+        <div [class]="'field ' + returnInvalidIfInvalid('address')">
+          <label>{{'PROFILE.ADDRESS' | translate}}</label>
+          <input type="text" formControlName="address" name="address" [attr.disabled]="!onChange?'not':null">
+        </div>
+
+        <div [class]="'field ' + returnInvalidIfInvalid('iin')">
+          <label>{{'PROFILE.IIN' | translate}}</label>
+          <input type="text" formControlName="iin" name="iin" [attr.disabled]="!onChange?'not':null">
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="change_btn btn" (click)="onChangeStatusChange()">{{onChange ? ('PROFILE.CANCEL' | translate) : ('PROFILE.CHANGE' | translate)}}</button>
+        <button class="submit_btn btn" (click)="onSubmit()" [disabled]="(profileForm.invalid && profileForm.touched) || !onChange">{{'PROFILE.SUBMIT' | translate}}</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+

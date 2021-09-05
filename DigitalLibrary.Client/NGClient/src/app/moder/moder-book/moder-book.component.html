@@ -1,0 +1,64 @@
+<div class="content">
+  <table class="content-table">
+    <thead>
+      <tr>
+        <th>{{'MODER.IMG' | translate}}</th>
+        <th>{{'MODER.TITLE' | translate}}</th>
+        <th>{{'MODER.AUTHOR' | translate}}</th>
+        <th>{{'MODER.GENRE' | translate}}</th>
+        <th>{{'MODER.SUBJECT' | translate}}</th>
+        <th>{{'MODER.PAGES' | translate}}</th>
+        <th>{{'MODER.YEAR' | translate}}</th>
+        <th>Pdf</th>
+        <th>Epub</th>
+        <th>Fb2</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="add">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a [routerLink]="['..','moder-book-edit']">+</a></td>
+      </tr>
+      <tr *ngFor="let book of books">
+        <td><img [src]="'https://localhost:5001/images/'+(book.image?book.image+'.jpeg':'andjey.jpg')" alt="ph"></td>
+        <td><span>{{book.title?book.title:'-'}}</span></td>
+        <td><span>{{book.author?(book.author.lastName + " " + book.author.firstName):'-'}}</span></td>
+        <td><span>{{book.genre?book.genre.title:'-'}}</span></td>
+        <td><span>{{book.subject?book.subject.title:'-'}}</span></td>
+        <td><span>{{book.pages?book.pages:'-'}}</span></td>
+        <td><span>{{book.year?book.year:'-'}}</span></td>
+        <td>
+          <span>
+            <a [class]="'download' + (book.pdf?'':' disabled')" (click)="downloadFile(book.pdf+'.pdf', book.title)"></a>
+          </span>
+        </td>
+        <td>
+          <span>
+            <a [class]="'download' + (book.epub?'':' disabled')" (click)="downloadFile(book.epub+'.epub', book.title)"></a>
+          </span>
+        </td>
+        <td>
+          <span>
+            <a [class]="'download' + (book.fb2?'':' disabled')" (click)="downloadFile(book.fb2+'.fb2', book.title)"></a>
+          </span>
+        </td>
+        <td><span><a [routerLink]="['..', 'moder-book-edit', book.id]"><img class="edit-btn" src="../../../assets/mod/edit.svg" alt="edit"></a></span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination">
+    <button [disabled]="pageNumber <= 1" (click)="changePage(pageNumber - 1)"> < </button>
+    <button> {{pageNumber}} </button>
+    <button [disabled]="pageNumber >= totalPages" (click)="changePage(pageNumber + 1)"> > </button>
+  </div>
+</div>

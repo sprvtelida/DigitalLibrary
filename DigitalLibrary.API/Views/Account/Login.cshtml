@@ -1,0 +1,39 @@
+﻿@model LoginViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Login";
+}
+
+<form asp-route="Login">
+    <input type="hidden" asp-for="ReturnUrl">
+
+    <span style="color: var(--btn-color); text-align: center; display: block; font-size: 20px; padding-top: 10px">@ViewBag.Message</span>
+
+    <div class="field">
+        <input class="input" type="text" name="EmailOrLogin" asp-for="EmailOrLogin" placeholder=" ">
+        <label for="EmailOrLogin" class="label">@Localizer["Email or Username"]</label>
+    </div>
+
+    <span asp-validation-for="EmailOrLogin"></span>
+
+    <div class="field">
+        <input class="input" type="password" name="password" asp-for="Password" placeholder=" ">
+        <label for="password" class="label">@Localizer["Password"]</label>
+    </div>
+
+    <span asp-validation-for="Password"]></span>
+    <span>@ViewBag.Error</span>
+
+    <a asp-action="PasswordRestoreRequest" asp-route-returnUrl="@ViewBag.ReturnUrl" class="link" style="text-align: right; margin: 20px 0 10px">@Localizer["Forgot password?"]</a>
+
+    <input class="button" type="submit" value="@Localizer["Login"]"></input>
+    <a class="link" href="@Url.ActionLink("Register", "Account", new {returnUrl = ViewBag.ReturnUrl})">
+        @Localizer["Not a member? Sign Up"]
+    </a>
+</form>
+
+
+
+

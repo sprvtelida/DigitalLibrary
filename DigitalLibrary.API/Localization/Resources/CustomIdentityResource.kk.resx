@@ -1,0 +1,99 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="DefaultError" xml:space="preserve">
+        <value>Белгісіз қате пайда болды.</value>
+    </data>
+    <data name="DuplicateEmail" xml:space="preserve">
+        <value>'{0}' электрондық поштасы бос емес.</value>
+    </data>
+    <data name="DuplicateUserName" xml:space="preserve">
+        <value>'{0}' логині бос емес.</value>
+    </data>
+    <data name="InvalidEmail" xml:space="preserve">
+        <value>'{0}' электрондық поштасы жарамсыз.</value>
+    </data>
+    <data name="InvalidToken" xml:space="preserve">
+        <value>Қате токен.</value>
+    </data>
+    <data name="InvalidUserName" xml:space="preserve">
+        <value>'{0}' пайдаланушы аты жарамсыз, тек әріптер немесе сандар қолданылуы мүмкін.</value>
+    </data>
+    <data name="LoginAlreadyAssociated" xml:space="preserve">
+        <value>Мұндай логині бар пайдаланушы бұрыннан бар.</value>
+    </data>
+    <data name="PasswordMismatch" xml:space="preserve">
+        <value>Қате пароль.</value>
+    </data>
+    <data name="PasswordRequiresDigit" xml:space="preserve">
+        <value>Пароль кем дегенде бір саннан тұруы керек ('0'-'9').</value>
+    </data>
+    <data name="PasswordRequiresLower" xml:space="preserve">
+        <value>Парольде кем дегенде бір кіші әріп болуы керек ('a'-'z').</value>
+    </data>
+    <data name="PasswordRequiresNonAlphanumeric" xml:space="preserve">
+        <value>Парольдерде кем дегенде бір әріптік-сандық емес таңба болуы керек.</value>
+    </data>
+    <data name="PasswordRequiresUpper" xml:space="preserve">
+        <value>Құпия сөз кем дегенде бір бас әріптен тұруы керек ('A'-'Z').</value>
+    </data>
+    <data name="PasswordTooShort" xml:space="preserve">
+        <value>Пароль кемінде '{0}' таңбадан тұруы керек.</value>
+    </data>
+    <data name="UserAlreadyHasPassword" xml:space="preserve">
+        <value>Пайдаланушы құпия сөзді орнатып қойған.</value>
+    </data>
+    <data name="UserLockoutNotEnabled" xml:space="preserve">
+        <value>Бұл пайдаланушы үшін құлыптау өшірілген.</value>
+    </data>
+    <data name="Failed" xml:space="preserve">
+        <value>Кіру деректері дұрыс емес.</value>
+    </data>
+    <data name="LockedOut" xml:space="preserve">
+        <value>Пайдаланушы бұғатталған.</value>
+    </data>
+    <data name="NotAllowed" xml:space="preserve">
+        <value>Аккаунт расталмаған.</value>
+    </data>
+    <data name="ConfirmationEmailSent" xml:space="preserve">
+        <value>Аккаунтты растайтын сілтеме бар хабарлама электрондық поштаға жіберілді.</value>
+    </data>
+    <data name="Required" xml:space="preserve">
+        <value>Өрісті толтыру қажет.</value>
+    </data>
+    <data name="RestoreLink" xml:space="preserve">
+        <value>Құпия сөзді өзгерту үшін сілтеме арқылы өтіңіз: {0}, егер сіз құпия сөзді өзгертуді сұрамасаңыз, бұл хабарды елемеңіз.</value>
+    </data>
+    <data name="Password Restore" xml:space="preserve">
+        <value>Парольді өзгерту сілтемесі</value>
+    </data>
+    <data name="PasswordResetEmailSent" xml:space="preserve">
+        <value>Құпия сөзді өзгерту сілтемесі сіздің электрондық поштаңызға жіберілді.</value>
+    </data>
+    <data name="PasswordChanged" xml:space="preserve">
+        <value>Пароль сәтті өзгертілді.</value>
+    </data>
+    <data name="EmailConfirmed" xml:space="preserve">
+        <value>
+Электрондық пошта адресі сәтті расталды.</value>
+    </data>
+    <data name="Email is invalid or not found." xml:space="preserve">
+        <value>Электрондық пошта жарамсыз немесе табылмады.</value>
+    </data>
+    <data name="ConfirmEmailLink" xml:space="preserve">
+        <value>Электрондық пошта адресін растау үшін сілтемеге өтіңіз: {0}.</value>
+    </data>
+    <data name="Email confirmation" xml:space="preserve">
+        <value>Электрондық поштаны растау</value>
+    </data>
+</root>

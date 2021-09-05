@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="panel">
+    <ul class="nav">
+      <li [routerLink]="['moder-book']">
+        <span><img src="../../assets/mod/wpf_books.svg" alt="icon1">{{'MODER.BOOKS' | translate}}</span>
+      </li>
+      <li [routerLink]="['moder-storage']">
+        <span><img src="../../assets/mod/clarity_storage-solid.svg" alt="icon1">{{'MODER.STORAGE' | translate}}</span>
+      </li>
+      <li [routerLink]="['moder-accounting', 'moderation']">
+        <span><img src="../../assets/mod/codicon_request-changes.svg" alt="icon1">{{'MODER.ACCS' | translate}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="outlet">
+    <router-outlet></router-outlet>
+  </div>
+</div>

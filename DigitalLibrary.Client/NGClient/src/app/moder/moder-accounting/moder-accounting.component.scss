@@ -1,0 +1,28 @@
+.content-table {
+  .btn {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    button {
+      border: none;
+      color: white;
+      background: #124b62;
+      cursor: pointer;
+      padding: 10px;
+      line-height: 0.6rem;
+      &:hover {
+        color: yellow;
+      }
+    }
+  }
+}
+
+.title-acc {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+}
+
+.all-mother {
+  min-height: 600px;
+}

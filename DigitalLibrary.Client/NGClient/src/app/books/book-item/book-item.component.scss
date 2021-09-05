@@ -1,0 +1,113 @@
+.layout-0 {
+  height: 300px;
+  width: 200px;
+  background: #263238;
+  overflow: hidden;
+  //border: 5px solid #263238;
+  position: relative;
+  cursor: pointer;
+  .image {
+    display: block;
+    text-align: center;
+    height: inherit;
+    margin: auto auto;
+  }
+  .icon {
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url("../../../assets/library.svg") no-repeat;
+    background-size: 40px;
+    color: #93B44D;
+    z-index: 10;
+  }
+  .over {
+    display: flex;
+    flex-direction: column;
+    color: #124b62;
+    border: 0.2px solid #F9F6F0;
+    bottom: 0;
+    box-shadow: inset 0px -5px 6px -7px black;
+    background: white;
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    text-align: left;
+    transition: all 300ms cubic-bezier(0.63, -0.02, 0.55, 1) 0ms;
+    text-align: left;
+    z-index: 10;
+    .title {
+      font-weight: 700;
+    }
+    div {
+      padding: 10px;
+      display: block;
+    }
+  }
+  &:hover{
+    .over {
+      height: 200px;
+    }
+  }
+}
+
+.layout-1 {
+  height: 300px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 200px auto;
+  column-gap: 15px;
+  position: relative;
+  .image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: inherit;
+  }
+  .icon {
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url("../../../assets/library.svg") no-repeat;
+    background-size: 40px;
+    z-index: 100;
+  }
+  .info {
+    background: #F9F6F0;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    .info__meta {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .title {
+        line-height: 30px;
+        font-size: 20px;
+        :first-child {
+          color: #124b62;
+          font-weight: 700;
+        }
+      }
+      .metadata {
+        line-height: 24px;
+      }
+    }
+  }
+  .info__description {
+    .description {
+      padding-top: 2em;
+      padding-left: 20px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 11;
+    }
+  }
+}
