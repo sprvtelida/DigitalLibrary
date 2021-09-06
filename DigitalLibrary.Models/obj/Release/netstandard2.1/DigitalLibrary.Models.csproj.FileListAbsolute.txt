@@ -1,9 +1,0 @@
-C:\Users\sapar\Desktop\DigitalLibrary\DigitalLibrary.Models\bin\Release\netstandard2.1\DigitalLibrary.Models.deps.json
-C:\Users\sapar\Desktop\DigitalLibrary\DigitalLibrary.Models\bin\Release\netstandard2.1\DigitalLibrary.Models.dll
-C:\Users\sapar\Desktop\DigitalLibrary\DigitalLibrary.Models\bin\Release\netstandard2.1\DigitalLibrary.Models.pdb
-C:\Users\sapar\Desktop\DigitalLibrary\DigitalLibrary.Models\obj\Release\netstandard2.1\DigitalLibrary.Models.csprojAssemblyReference.cache
-C:\Users\sapar\Desktop\DigitalLibrary\DigitalLibrary.Models\obj\Release\netstandard2.1\DigitalLibrary.Models.AssemblyInfoInputs.cache
-C:\Users\sapar\Desktop\DigitalLibrary\DigitalLibrary.Models\obj\Release\netstandard2.1\DigitalLibrary.Models.AssemblyInfo.cs
-C:\Users\sapar\Desktop\DigitalLibrary\DigitalLibrary.Models\obj\Release\netstandard2.1\DigitalLibrary.Models.csproj.CoreCompileInputs.cache
-C:\Users\sapar\Desktop\DigitalLibrary\DigitalLibrary.Models\obj\Release\netstandard2.1\DigitalLibrary.Models.dll
-C:\Users\sapar\Desktop\DigitalLibrary\DigitalLibrary.Models\obj\Release\netstandard2.1\DigitalLibrary.Models.pdb
