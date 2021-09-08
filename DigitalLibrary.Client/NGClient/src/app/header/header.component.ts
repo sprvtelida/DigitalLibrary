@@ -5,6 +5,7 @@ import {ProfileService, Profile} from "../services/profile.service";
 import {Observable, Subscription} from "rxjs";
 import {first} from "rxjs/operators";
 import {TranslateService} from "@ngx-translate/core";
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -83,6 +84,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.roleSub = this.profileService.roleSubject.subscribe(role => {
       this.role = role;
     });
+
+    console.log(environment.clientUrl);
   }
 
   ngOnDestroy(): void {

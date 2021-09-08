@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   apiUrl: 'https://localhost:5001',
   //clientUrl: 'https://localhost:5003',
-  clientUrl: 'http://localhost:5002',
+  //clientUrl: 'http://localhost:5002',
+  clientUrl: window.location.origin,
   clientId: 'angular.client_2'
 };
 
