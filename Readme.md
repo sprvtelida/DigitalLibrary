@@ -6,8 +6,28 @@
    - .NET 5 SDK; 
    -  Rider/Visual Studio 2019/.NET CLI;
    -  Node JS.
+   
    ---
+   
    Скачайте проект в любую удобную вам папку: `gh repo clone sprvtelida/DigitalLibrary`
+   Запустите 2 проекта:
+      - DigitalLibrary.API;
+      - DigitalLibrary.Client;
+   По-умолчанию серверная часть приложения запуститься на https://localhost:5001, а клиентская часть на https://localhost:5003.
+   
+   ---
+   
+   Чтобы функции: регистрации; восстановления пароля работали, необходимо указать электронную почту. В корне проекта DigitalLibrary.API создаем файл appsettings.json.</br>
+   В этом файле добавляем следующее поле:
+   `
+   "MailSettings": {
+    "Mail": "Example@gmail.com", // электронная почта
+    "DisplayName" : "Digital Library", // имя электронной почты
+    "Password": "password123", // пароль от электронной почты
+    "Host": "smtp.gmail.com", // имя сервера почты
+    "Port": 587 // порт сервера почты
+  }
+  `
 
 Логин/пароль администратора:
 	admin:admin
