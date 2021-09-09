@@ -18,15 +18,22 @@
    ---
    
    Чтобы функции: регистрации; восстановления пароля работали, необходимо указать электронную почту. В корне проекта DigitalLibrary.API создаем файл appsettings.json.</br>
-   В этом файле добавляем следующее поле:
+   В этом файле добавляем следующее поле и изменяем значение каждого под-поля:
    ```json 
    "MailSettings": { 
-    "Mail": "Example@gmail.com", // электронная почта 
-    "DisplayName" : "Digital Library", // имя электронной почты 
-    "Password": "password123", // пароль от электронной почты 
-    "Host": "smtp.gmail.com", // имя сервера почты
-    "Port": 587 // порт сервера почты 
+    "Mail": "Example@gmail.com", 
+    "DisplayName" : "Digital Library", 
+    "Password": "password123", 
+    "Host": "smtp.gmail.com",
+    "Port": 587
   } 
+  ```
+  ```
+  Mail: электронная почта
+  DisplayName: имя email
+  Password: пароль от email
+  Host: имя почтового сервера
+  Port: порт почтового сервера
   ```
 
 Логин/пароль администратора:
