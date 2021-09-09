@@ -12,10 +12,12 @@
    
    ---
    
-   Скачайте проект в любую удобную вам папку: `gh repo clone sprvtelida/DigitalLibrary`
+   Скачайте проект в любую удобную вам папку: `git clone https://github.com/sprvtelida/DigitalLibrary`
+   
    Запустите 2 проекта:
-      - DigitalLibrary.API;
-      - DigitalLibrary.Client;
+   - DigitalLibrary.API;
+   - DigitalLibrary.Client.
+      
    По-умолчанию серверная часть приложения запуститься на https://localhost:5001, а клиентская часть на https://localhost:5003.
    
    ---
