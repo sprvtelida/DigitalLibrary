@@ -19,7 +19,7 @@
    
    Чтобы функции: регистрации; восстановления пароля работали, необходимо указать электронную почту. В корне проекта DigitalLibrary.API создаем файл appsettings.json.</br>
    В этом файле добавляем следующее поле:
-   `json 
+   `{json} 
    "MailSettings": { </br>
     "Mail": "Example@gmail.com", // электронная почта </br>
     "DisplayName" : "Digital Library", // имя электронной почты </br>
