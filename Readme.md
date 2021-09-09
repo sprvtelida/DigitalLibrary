@@ -4,10 +4,9 @@
 - Инструкция по сборке и запуску проекта:
 Для того чтобы скомпилировать и запустить программу в development режиме необходимо иметь: 
    - .NET 5 SDK; 
-   -  Rider или Visual Studio 2019;
+   -  Rider/Visual Studio 2019/.NET CLI;
    -  Node JS.
 
-Чтобы запустить публичную версию программы необходимо в файле appsettings.prod.json проекта DigitalLibrary.API изменить connection string для SQL сервера.
 Логин/пароль администратора:
 	admin:admin
 Логин/пароль модератора:
