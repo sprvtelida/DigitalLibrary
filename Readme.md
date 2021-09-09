@@ -6,7 +6,7 @@
    - .NET 5 SDK; 
    -  Rider/Visual Studio 2019/.NET CLI;
    -  Node JS.
----
+   ---
 
 
 Логин/пароль администратора:
