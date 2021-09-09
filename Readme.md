@@ -7,7 +7,7 @@
    -  Rider/Visual Studio 2019/.NET CLI;
    -  Node JS.
    ---
-
+   Скачайте проект в любую удобную вам папку: `gh repo clone sprvtelida/DigitalLibrary`
 
 Логин/пароль администратора:
 	admin:admin
