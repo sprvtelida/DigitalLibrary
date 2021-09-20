@@ -19,16 +19,6 @@ namespace DigitalLibrary.API.Services.FileManager
             _env = env;
         }
 
-        public void SingleFile(IFormFile file)
-        {
-            var dir = _env.ContentRootPath;
-
-            using (var fileStream =
-                new FileStream(Path.Combine(dir, "file.png"), FileMode.Create, FileAccess.Write))
-            {
-                file.CopyTo(fileStream);
-            }
-        }
 
         public void UploadImage(IFormFile file, string Id)
         {
